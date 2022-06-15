@@ -33,7 +33,7 @@
             tapping-term-ms = <200>;
             bindings = <&kp LEFT>, <&kp LS(LEFT)>, <&kp LS(HOME)>;
         };
-        
+
         td2: tap_dance_2 {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_2";
@@ -91,10 +91,10 @@
 // | CAPS| UNDO | CUT  | COPY  | PASTE |      |      |  |      | PGUP |      |       |      |       |       |
 //              |      |       |       |      | BKSP |  |      |      |      |       |      |
             bindings = <
-&trans        &trans        &kp K_CMENU   &kp PSCRN     &kp INS       &trans                      &kp PG_UP  &trans  &td0      &trans  &kp N0   &trans
-&kp CLCK      &trans        &kp LSHFT     &kp LCTRL     &kp LALT      &trans                      &kp HOME   &td1    &kp DOWN  &td2    &kp END  &kp BSPC
-&trans        &kp K_PASTE   &kp K_COPY    &kp K_CUT     &kp K_UNDO    &kp CLCK    &trans  &trans  &kp PG_DN  &trans  &trans    &trans  &trans   &trans
-                            &kp BSPC      &trans        &trans        &trans      &trans  &trans  &trans     &trans  &trans    &trans
+&trans        &trans        &kp K_CMENU   &kp PSCRN     &kp INS       &trans                      &kp PG_UP          &trans             &td0      &trans               &kp N0           &trans
+&kp CLCK      &trans        &kp LSHFT     &kp LCTRL     &kp LALT      &trans                      &mt LS(HOME) HOME  &mt LA(LEFT) LEFT  &kp DOWN  &mt LA(RIGHT) RIGHT  &mt LS(END) END  &kp BSPC
+&trans        &kp K_PASTE   &kp K_COPY    &kp K_CUT     &kp K_UNDO    &kp CLCK    &trans  &trans  &kp PG_DN          &trans             &trans    &trans               &trans           &trans
+                            &kp BSPC      &trans        &trans        &trans      &trans  &trans  &trans             &trans             &trans    &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
