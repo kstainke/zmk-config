@@ -16,6 +16,33 @@
 #define NUMPAD  3
 
 / {
+    // Tap-dance definitions
+    behaviors {
+        td0: tap_dance_0 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_0";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp UP>, <&kp LA(UP)>, <&kp PG_UP>;
+        };
+
+        td1: tap_dance_1 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_1";
+            #binding-cells = <1>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LEFT>, <&kp LS(LEFT)>, <&kp LS(HOME)>;
+        };
+
+        td2: tap_dance_2 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_2";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            bindings = <&kp RIGHT>, <&kp LS(RIGHT)>, <&kp LS(END)>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -64,11 +91,10 @@
 // | CAPS| UNDO | CUT  | COPY  | PASTE |      |      |  |      | PGUP |      |       |      |       |       |
 //              |      |       |       |      | BKSP |  |      |      |      |       |      |
             bindings = <
-&bt BT_SEL 4  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &bt BT_CLR                  &trans     &trans             &trans         &trans               &trans   &trans
-&trans        &trans        &kp K_CMENU   &kp PSCRN     &kp INS       &trans                      &kp PG_UP  &trans             &mt LA(UP) UP  &trans               &kp N0   &trans
-&kp CLCK      &trans        &kp LSHFT     &kp LCTRL     &kp LALT      &trans                      &kp HOME   &mt LS(LEFT) LEFT  &kp DOWN       &mt LS(RIGHT) RIGHT  &kp END  &kp BSPC
-&trans        &kp K_PASTE   &kp K_COPY    &kp K_CUT     &kp K_UNDO    &kp CLCK    &trans  &trans  &kp PG_DN  &trans             &trans         &trans               &trans   &trans
-                            &kp BSPC      &trans        &trans        &trans      &trans  &trans  &trans     &trans             &trans         &trans
+&trans        &trans        &kp K_CMENU   &kp PSCRN     &kp INS       &trans                      &kp PG_UP  &trans  &td0      &trans  &kp N0   &trans
+&kp CLCK      &trans        &kp LSHFT     &kp LCTRL     &kp LALT      &trans                      &kp HOME   &td1    &kp DOWN  &td2    &kp END  &kp BSPC
+&trans        &kp K_PASTE   &kp K_COPY    &kp K_CUT     &kp K_UNDO    &kp CLCK    &trans  &trans  &kp PG_DN  &trans  &trans    &trans  &trans   &trans
+                            &kp BSPC      &trans        &trans        &trans      &trans  &trans  &trans     &trans  &trans    &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
