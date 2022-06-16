@@ -26,21 +26,21 @@
             bindings = <&kp UP>, <&kp LA(UP)>, <&kp PG_UP>;
         };
 
-        td1: tap_dance_1 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_1";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp LEFT>, <&kp LS(LEFT)>, <&kp LS(HOME)>;
-        };
+//        td1: tap_dance_1 {
+//            compatible = "zmk,behavior-tap-dance";
+//            label = "TAP_DANCE_1";
+//            #binding-cells = <0>;
+//            tapping-term-ms = <200>;
+//            bindings = <&kp LEFT>, <&kp LS(LEFT)>, <&kp LS(HOME)>;
+//        };
 
-        td2: tap_dance_2 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_2";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp RIGHT>, <&kp LS(RIGHT)>, <&kp LS(END)>;
-        };
+//        td2: tap_dance_2 {
+//            compatible = "zmk,behavior-tap-dance";
+//            label = "TAP_DANCE_2";
+//            #binding-cells = <0>;
+//            tapping-term-ms = <200>;
+//            bindings = <&kp RIGHT>, <&kp LS(RIGHT)>, <&kp LS(END)>;
+//        };
     };
 
     keymap {
