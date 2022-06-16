@@ -36,11 +36,11 @@
 
 //        td2: tap_dance_2 {
 //            compatible = "zmk,behavior-tap-dance";
-//Z            label = "TAP_DANCE_2";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp RIGHT>, <&kp LS(RIGHT)>, <&kp LS(END)>;
-        };
+//            label = "TAP_DANCE_2";
+//            #binding-cells = <0>;
+//            tapping-term-ms = <200>;
+//            bindings = <&kp RIGHT>, <&kp LS(RIGHT)>, <&kp LS(END)>;
+//        };
     };
 
     keymap {
